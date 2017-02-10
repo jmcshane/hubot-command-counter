@@ -1,0 +1,36 @@
+{
+  "name": "hubot-command-counter",
+  "version": "0.0.1",
+  "description": "Counts the number of times each interceptor is matched",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "mocha --recursive --compilers 'coffee:coffee-script/register' --require coffee-coverage/register-istanbul test/*.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jmcshane/hubot-command-counter.git"
+  },
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "middleware"
+  ],
+  "author": "jmcshane <jmcshan1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmcshane/hubot-command-counter/issues"
+  },
+  "homepage": "https://github.com/jmcshane/hubot-command-counter#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coffee-coverage": "^1.0.1",
+    "coffee-script": "^1.12.3",
+    "hubot": "^2.19.0",
+    "hubot-test-helper": "^1.5.1",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
