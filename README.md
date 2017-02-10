@@ -6,13 +6,13 @@ This module implements the Hubot middleware pattern to count the number of times
 
 In order to install the hubot counter, first install the package:
 
-  npm install --save hubot-command-counter
+    npm install --save hubot-command-counter
 
 Then, add the counter to the `external-scripts.json` file at the root of your project.
 
-  [
-    "hubot-command-counter"
-  ]
+    [
+      "hubot-command-counter"
+    ]
 
 ## Configuration
 
@@ -22,12 +22,12 @@ If you are using a brain that requires the save event in order to persist the br
 
 Within hubot, there are not good ways to identify listeners.  In order to get better identifiers, an option parameter was added to all the `robot.*` functions.  This middleware defines a `counterId` option that will allow each command to be named nicely.
 
-  robot.respond /test post please ignore/, {commandId: test-post}, (msg) ->
+    robot.respond /test post please ignore/, {commandId: test-post}, (msg) ->
 
 ## Accessing Counts
 
 Once the commands are aliased as above, these counts can be accessed using the following command
 
-  count-middleware <counterId>
+    count-middleware <counterId>
 
 If no counterId is provided, the counts for all recorded commands will be listed.
