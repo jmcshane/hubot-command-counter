@@ -5,7 +5,7 @@
 #   HUBOT_COMMAND_COUNTER_SAVE_PERIOD - how frequently to emit the save event to persist the data (optional, save not called if not set)
 #
 # Commands:
-#   debug counter - gets the current counter data
+#   count-middleware <key> - gets the current counter data with an optional key
 #
 # Notes
 #   This middleware uses the robot brain to save how often each command is called.
@@ -14,6 +14,8 @@
 #
 # Author:
 #   jmcshane <jmcshan1@gmail.com>
+
+pretty = require 'prettyjson'
 
 COUNTER_KEY = 'listener-counter-key'
 savePeriod = process.env.HUBOT_COMMAND_COUNTER_SAVE_PERIOD
@@ -24,6 +26,13 @@ module.exports = (robot) ->
       robot.brain.save()
       setTimeout(f, savePeriod)
     ), savePeriod)
+
+  robot.respond "/count-middleware(?: (.*))?/", (msg) ->
+    counts = robot.brain.get(COUNTER_KEY)
+    if msg.match[1]
+      msg.reply counts[msg.match[1]]
+    else
+      msg.send "/code #{pretty.render counts}"
 
   robot.listenerMiddleware (context, next, done) ->
     # The regex is often ugly, so provide an ability to set counterId
