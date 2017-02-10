@@ -1,6 +1,6 @@
 {
   "name": "hubot-command-counter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Counts the number of times each interceptor is matched",
   "main": "index.coffee",
   "scripts": {
