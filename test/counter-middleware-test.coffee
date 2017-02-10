@@ -7,7 +7,7 @@ TextMessage = require('hubot/src/message').TextMessage
 
 COUNTER_KEY = 'listener-counter-key'
 
-process.env.HUBOT_COMMAND_COUNTER_SAVE_PERIOD = 200
+process.env.HUBOT_COMMAND_COUNTER_SAVE_PERIOD = "1"
 
 describe 'counter-middleware', ->
   robot = {}

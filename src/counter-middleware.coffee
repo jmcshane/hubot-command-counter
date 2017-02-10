@@ -18,7 +18,7 @@
 pretty = require 'prettyjson'
 
 COUNTER_KEY = 'listener-counter-key'
-savePeriod = process.env.HUBOT_COMMAND_COUNTER_SAVE_PERIOD
+savePeriod = parseInt(process.env.HUBOT_COMMAND_COUNTER_SAVE_PERIOD) * 1000
 module.exports = (robot) ->
 
   if savePeriod
