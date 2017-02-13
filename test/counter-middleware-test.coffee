@@ -43,7 +43,7 @@ describe 'counter-middleware', ->
         complete=true
         done()
 
-  it 'sets the key based on the counterId options', (done) ->
+  it 'sets the key based on the id options', (done) ->
     adapter.receive(new TextMessage user, "debug counter")
 
     adapter.on "reply", (envelope, strings) ->
@@ -51,7 +51,7 @@ describe 'counter-middleware', ->
         expect(robot.brain.get(COUNTER_KEY)["debug-counter"]).to.eql(1)
         done()
 
-  it 'if the counterId is not present, sets the key based on the regex', (done) ->
+  it 'if the id is not present, sets the key based on the regex', (done) ->
     adapter.receive(new TextMessage user, "debug ctr without ID")
 
     adapter.on "reply", (envelope, strings) ->

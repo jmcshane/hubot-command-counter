@@ -10,7 +10,7 @@
 # Notes
 #   This middleware uses the robot brain to save how often each command is called.
 #   The regex is a bad way to save this, so an option can be set in the respond function definition
-#   e.g. robot.respond /test/, {counterId: 'my-pretty-string'}, (msg)->
+#   e.g. robot.respond /test/, {id: 'my-pretty-string'}, (msg)->
 #
 # Author:
 #   jmcshane <jmcshan1@gmail.com>
@@ -35,8 +35,8 @@ module.exports = (robot) ->
       msg.send "/code #{pretty.render counts}"
 
   robot.listenerMiddleware (context, next, done) ->
-    # The regex is often ugly, so provide an ability to set counterId
-    listenerKey = context.listener.options?.counterId or context.listener.regex.toString()
+    # The regex is often ugly, so provide an ability to set id
+    listenerKey = context.listener.options?.id or context.listener.regex.toString()
     return unless listenerKey?
     try
       listenerData = robot.brain.get(COUNTER_KEY) or {}

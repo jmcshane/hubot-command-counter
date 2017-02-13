@@ -20,14 +20,14 @@ If you are using a brain that requires the save event in order to persist the br
 
 ## Listener Configuration
 
-Within hubot, there are not good ways to identify listeners.  In order to get better identifiers, an option parameter was added to all the `robot.*` functions.  This middleware defines a `counterId` option that will allow each command to be named nicely.
+Within hubot, there are not good ways to identify listeners.  In order to get better identifiers, an option parameter was added to all the `robot.*` functions.  This middleware users the hubot built-in `id` option that will allow each command to be named nicely.
 
-    robot.respond /test post please ignore/, {counterId: test-post}, (msg) ->
+    robot.respond /test post please ignore/, {id: test-post}, (msg) ->
 
 ## Accessing Counts
 
 Once the commands are aliased as above, these counts can be accessed using the following command
 
-    count-middleware <counterId>
+    count-middleware <id>
 
-If no counterId is provided, the counts for all recorded commands will be listed.
+If no id is provided, the counts for all recorded commands will be listed.
