@@ -22,7 +22,7 @@ If you are using a brain that requires the save event in order to persist the br
 
 Within hubot, there are not good ways to identify listeners.  In order to get better identifiers, an option parameter was added to all the `robot.*` functions.  This middleware users the hubot built-in `id` option that will allow each command to be named nicely.
 
-    robot.respond /test post please ignore/, {id: test-post}, (msg) ->
+    robot.respond /test post please ignore/, {id: 'test-post'}, (msg) ->
 
 ## Accessing Counts
 
